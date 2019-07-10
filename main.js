@@ -3,6 +3,16 @@ var app = new Vue({
   el: '#app',
   data: {
     items: items
+  },
+  methods: {
+    reset: function() {
+      localStorage.removeItem('items');
+      items = [];
+      this.items = items;
+      markers.features = [];
+      layerGroup.clearLayers(); // inherited from LayerGroup
+      layerGroup.addData(markers);
+    }
   }
 })
 
@@ -115,3 +125,4 @@ mapAgent.on('click', function(e){
   layerGroup.clearLayers(); // inherited from LayerGroup
   layerGroup.addData(markers);
 });
+

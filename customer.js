@@ -6,7 +6,9 @@ var markers = {
 var app = new Vue({
   el: '#app',
   data: {
-    items: items,
+    items: items
+  },
+  methods: {
     onClick: function(item) {
       console.log(item);
       markers.features = [
