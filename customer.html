@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin=""/>
+      <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+      integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+      crossorigin=""></script>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">      
+      <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+    <div id="app">   
+      <h1>Store Map Demo</h1>        
+      <h2>Customer View</h2>
+      <div class="map-container">
+        <div id="map-customer"></div>
+        <table id="items-table">
+            <tr>
+              <th>Name</th>
+              <th>aisle</th>
+              <th></th>
+            </tr>
+            <tr v-for="item in items">
+              <td>{{ item.name }}</td>
+              <td>{{ item.aisle }}</td>
+              <td><button v-on:click="onClick(item)">Find Item</button></td>              
+            </tr>
+          </table>      
+      </div>
+    </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <script src="customer.js"></script>
+  </body>
+</html>
